@@ -6,6 +6,8 @@
     <title>Trang Chủ | Cửa Hàng Demo</title>
     <!-- Tải Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Cấu hình Tailwind cho font Inter -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -88,109 +90,9 @@
     <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-10 text-center">Sản Phẩm Nổi Bật</h2>
 
     <!-- Product Grid (Lưới sản phẩm) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
+    <div id="ListProductDOM" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
 
-        <!-- Bắt đầu Sản phẩm 1 -->
-        <!-- Image Placeholder: 400x300, background #818cf8 (indigo-400), text #ffffff (white) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl transform hover:-translate-y-1">
-            <img src="https://placehold.co/400x300/818cf8/ffffff?text=S%E1%BA%A3n+Ph%E1%BA%A9m+1" alt="Sản phẩm 1" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Đồng Hồ Thông Minh X8</h3>
-                <p class="text-gray-500 text-sm mb-4">Công nghệ mới nhất, chống nước.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold text-indigo-600">1.250.000 VNĐ</span>
-                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-full hover:bg-indigo-600 transition duration-300">
-                        Thêm vào Giỏ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Kết thúc Sản phẩm 1 -->
 
-        <!-- Bắt đầu Sản phẩm 2 -->
-        <!-- Image Placeholder: 400x300, background #fb923c (orange-400), text #ffffff (white) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl transform hover:-translate-y-1">
-            <img src="https://placehold.co/400x300/fb923c/ffffff?text=S%E1%BA%A3n+Ph%E1%BA%A9m+2" alt="Sản phẩm 2" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Tai Nghe Không Dây Pro</h3>
-                <p class="text-gray-500 text-sm mb-4">Âm thanh Hi-Fi, pin 24 giờ.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold text-indigo-600">890.000 VNĐ</span>
-                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-full hover:bg-indigo-600 transition duration-300">
-                        Thêm vào Giỏ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Kết thúc Sản phẩm 2 -->
-
-        <!-- Bắt đầu Sản phẩm 3 -->
-        <!-- Image Placeholder: 400x300, background #34d399 (emerald-400), text #ffffff (white) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl transform hover:-translate-y-1">
-            <img src="https://placehold.co/400x300/34d399/ffffff?text=S%E1%BA%A3n+Ph%E1%BA%A9m+3" alt="Sản phẩm 3" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Balo Du Lịch Chống Thấm</h3>
-                <p class="text-gray-500 text-sm mb-4">Thiết kế ergonomic, dung tích lớn.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold text-indigo-600">650.000 VNĐ</span>
-                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-full hover:bg-indigo-600 transition duration-300">
-                        Thêm vào Giỏ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Kết thúc Sản phẩm 3 -->
-
-        <!-- Bắt đầu Sản phẩm 4 -->
-        <!-- Image Placeholder: 400x300, background #fcd34d (amber-300), text #ffffff (white) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl transform hover:-translate-y-1">
-            <img src="https://placehold.co/400x300/fcd34d/ffffff?text=S%E1%BA%A3n+Ph%E1%BA%A9m+4" alt="Sản phẩm 4" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Đèn Bàn LED Cảm Ứng</h3>
-                <p class="text-gray-500 text-sm mb-4">3 chế độ sáng, bảo vệ mắt.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold text-indigo-600">320.000 VNĐ</span>
-                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-full hover:bg-indigo-600 transition duration-300">
-                        Thêm vào Giỏ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Kết thúc Sản phẩm 4 -->
-
-        <!-- Bắt đầu Sản phẩm 5 -->
-        <!-- Image Placeholder: 400x300, background #d8b4fe (violet-300), text #ffffff (white) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl transform hover:-translate-y-1">
-            <img src="https://placehold.co/400x300/d8b4fe/ffffff?text=S%E1%BA%A3n+Ph%E1%BA%A9m+5" alt="Sản phẩm 5" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Máy Pha Cà Phê Mini</h3>
-                <p class="text-gray-500 text-sm mb-4">Thiết kế nhỏ gọn, dễ vệ sinh.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold text-indigo-600">2.100.000 VNĐ</span>
-                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-full hover:bg-indigo-600 transition duration-300">
-                        Thêm vào Giỏ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Kết thúc Sản phẩm 5 -->
-
-        <!-- Bắt đầu Sản phẩm 6 -->
-        <!-- Image Placeholder: 400x300, background #60a5fa (blue-400), text #ffffff (white) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl transform hover:-translate-y-1">
-            <img src="https://placehold.co/400x300/60a5fa/ffffff?text=S%E1%BA%A3n+Ph%E1%BA%A9m+6" alt="Sản phẩm 6" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Ổ Cứng Di Động 1TB</h3>
-                <p class="text-gray-500 text-sm mb-4">Tốc độ siêu nhanh, bảo mật cao.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold text-indigo-600">1.850.000 VNĐ</span>
-                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-full hover:bg-indigo-600 transition duration-300">
-                        Thêm vào Giỏ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Kết thúc Sản phẩm 6 -->
 
     </div>
 </main>
@@ -216,6 +118,46 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenu.classList.toggle('hidden');
     });
+loadDataToForm()
+    async function loadDataToForm() {
+        let { data: response } = await axios.get("product/get-all-product");
+        console.log(response);
+        let listHtml = "";
+
+        for (let i = 0; i < response.length; i++) {
+            listHtml += `
+            <div class="col">
+                <div class="product-card card h-100">
+                    <div class="product-img-wrapper">
+                        <img src="${response[i].prodImg}" alt="Smartphone">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">${response[i].prodName}</h5>
+                        <p class="card-text text-muted small"></p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="price-tag">${response[i].prodPrice}</span>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus me-2"></i>Thêm vào giỏ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        }
+
+        $("#ListProductDOM").html(listHtml);
+    }
+
 </script>
 
 </body>
